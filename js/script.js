@@ -1,5 +1,4 @@
 function getMoveName(argMoveId){
-    console.log('moveNames:', argMoveId)
     if(argMoveId == 1){
       return 'kamień';
     } else if(argMoveId == 2){
@@ -17,12 +16,8 @@ function displayResault(argComputerMove, argPlayerMove){
 
     if(argComputerMove == 'kamień' && argPlayerMove == 'papier'){
         printMessage('wygrywasz!');
-    }else if(argComputerMove == 'kamień' && argPlayerMove == 'kamień'){
-        printMessage('Remis!');
     }else if(argComputerMove == 'kamień' && argPlayerMove == 'nożyce'){ 
         printMessage('przegrywasz!');
-    }else if(argComputerMove == 'papier' && argPlayerMove == 'papier'){
-        printMessage('Remis!');
     }else if(argComputerMove == 'papier' && argPlayerMove == 'kamień'){
         printMessage('przegrywasz!');
     }else if(argComputerMove == 'papier' && argPlayerMove == 'nożyce'){
@@ -31,7 +26,7 @@ function displayResault(argComputerMove, argPlayerMove){
         printMessage('przegrywasz!');
     }else if(argComputerMove == 'nożyce' && argPlayerMove == 'kamień'){
         printMessage('wygrywasz!');
-    }else if(argComputerMove == 'nożyce' && argPlayerMove == 'nożyce'){
+    }else if(argComputerMove == argPlayerMove){
         printMessage('Remis!');
     }
 
@@ -44,7 +39,7 @@ let playerInput = prompt('Wybierz swój ruch! 1: kamień, 2: papier, 3: nożyce.
 
 console.log('Gracz wpisał: ' + playerInput);
 
-let argPlayerMove = getMoveName(playerInput);
+let playerMove = getMoveName(playerInput);
 /*
 if(playerInput == 1){
   playerMove = 'kamień';
@@ -54,13 +49,13 @@ if(playerInput == 1){
   playerMove = 'nożyce';
 }
 */
-printMessage('Twój ruch to: ' + argPlayerMove);
+printMessage('Twój ruch to: ' + playerMove);
 
 
 
 console.log('Wylosowana liczba to: ' + randomNumber);
 
-let argComputerMove = getMoveName(randomNumber);
+let computerMove = getMoveName(randomNumber);
 /*
 if(randomNumber == 1){
   computerMove = 'kamień';
@@ -70,8 +65,8 @@ if(randomNumber == 1){
   computerMove = 'nożyce';
 }
 */
-printMessage('Mój ruch to: ' + argComputerMove);
+printMessage('Mój ruch to: ' + computerMove);
 
-displayResault (argComputerMove, argPlayerMove);
+displayResault (computerMove, playerMove);
 
 console.log(getMoveName('1'));
