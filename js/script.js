@@ -2,7 +2,7 @@
   const playGame = function (playerInput) {
     clearMessages();
 
-    function getMoveName(argMoveId) {
+    const getMoveName = function(argMoveId) {
       if(argMoveId == 1) {
         return 'kamień';
       } else if(argMoveId == 2) {
@@ -15,7 +15,7 @@
       }
     }
 
-    const displayResault = function (argComputerMove, argPlayerMove){
+    const displayResult = function (argComputerMove, argPlayerMove) {
       printMessage('Zagrałem ' + argComputerMove + ', a Ty ' + argPlayerMove + '! ');
       console.log('moves:', argComputerMove, argPlayerMove)
 
@@ -35,34 +35,19 @@
     }
 
     const randomNumber = Math.floor(Math.random() * 3 + 1);
-    /*
-    let playerInput = prompt('Wybierz swój ruch! 1: kamień, 2: papier, 3: nożyce.');
-    */
+
     console.log('Gracz wpisał: ' + playerInput);
+
     const playerMove = getMoveName(playerInput);
-    /*
-    if(playerInput == 1){
-      playerMove = 'kamień';
-    } else if (playerInput == 2){
-      playerMove = 'papier';
-    } else if (playerInput == 3){
-      playerMove = 'nożyce';
-    }
-    */
     printMessage('Twój ruch to: ' + playerMove);
+
     console.log('Wylosowana liczba to: ' + randomNumber);
+
     const computerMove = getMoveName(randomNumber);
-    /*
-    if(randomNumber == 1){
-      computerMove = 'kamień';
-    } else if(randomNumber == 2){
-      computerMove = 'papier';
-    } else if(randomNumber == 3){
-      computerMove = 'nożyce';
-    }
-    */
     printMessage('Mój ruch to: ' + computerMove);
-    displayResault(computerMove, playerMove);
+
+    displayResult(computerMove, playerMove);
+    
     console.log(getMoveName('1'));
   }
 
@@ -79,3 +64,27 @@
   });
 
 }
+
+/*
+  let playerInput = prompt('Wybierz swój ruch! 1: kamień, 2: papier, 3: nożyce.');
+*/
+
+/*
+  if(playerInput == 1){
+    playerMove = 'kamień';
+  } else if (playerInput == 2){
+    playerMove = 'papier';
+  } else if (playerInput == 3){
+    playerMove = 'nożyce';
+  }
+*/
+
+/*
+  if(randomNumber == 1){
+    computerMove = 'kamień';
+  } else if(randomNumber == 2){
+    computerMove = 'papier';
+  } else if(randomNumber == 3){
+    computerMove = 'nożyce';
+  }
+*/
